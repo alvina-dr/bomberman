@@ -9,6 +9,8 @@
 Grid::Grid(int gameGridWidth, int gameGridHeight) : gameGridWidth(gameGridWidth), gameGridHeight(gameGridHeight), gameGridSize(0) {
     gameGridSize = gameGridWidth * gameGridHeight;
     grid = new int[gameGridSize];
+    nodeRadius = 2;
+    nodeDiameter = nodeRadius * 2;
 }
 
 void Grid::ReadAndAddFileToGrid(std::string fileName) {
@@ -90,4 +92,35 @@ bool Grid::HasCollisionWallOnly(int _x, int _y) {
     else {
         return false;
     }
+}
+
+void Grid::CreateNodeGrid() {
+    for (int x = 0; x < gameGridHeight; x++) {
+        for (int y = 0; y < gameGridWidth; y++) {
+            int gridCoord = GetGridCoordinates(x, y);
+            bool walkable = !(Grid::HasCollisionWallOnly(x,y));
+            nodeGrid[gridCoord] = (Node(walkable, x, y));
+        }
+    }
+}
+
+std::stack<Node> Grid::GetNeighbors(Node node) {
+    std::stack<Node> neighbours;
+
+    for (int x = -1; x <= 1; x++) {
+        for (int y = -1; y <= 1; y++) {
+            if (x == 0 && y == 0)
+                continue;
+
+            int checkX = node.nodeX + x;
+            int checkY = node.nodeY + y;
+
+            if (checkX >= 0 && checkX < gameGridHeight && checkY >= 0 && checkY < gameGridWidth) {
+                int gridCoord = GetGridCoordinates(checkX, checkY);
+                neighbours.push(nodeGrid[gridCoord]);
+            }
+        }
+    }
+
+    return neighbours;
 }
