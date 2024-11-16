@@ -22,7 +22,7 @@ This trailer can be found on Youtube : [Bomber Trailer](https://www.youtube.com/
 
 # Credits
 
-[Alvina Damasio-Razafiarizaka](https://alvina-dr.com/)
+[Alvina Damasio--Razafiarizaka](https://alvina-dr.com/)
 
 [Marion Pobelle](https://vitaminexe.itch.io/)
 
