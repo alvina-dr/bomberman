@@ -26,6 +26,8 @@ This trailer can be found on Youtube : [Bomber Trailer](https://www.youtube.com/
 
 [Marion Pobelle](https://vitaminexe.itch.io/)
 
+[Jules Sarton du Jonchay](https://github.com/jojoket)
+
 # Development
 
 This game was made by ENJMIN students in a few weeks, as a way to learn C++. The main challenge was that all the graphics had to be shown in the console in ASCII. [Visual Studio](https://visualstudio.microsoft.com/fr/) was used to develop this game.
